@@ -15,7 +15,7 @@ app.post("/users", async (req, res) => {
     const { email } = req.body;
     const newUser = await pool.query(
       "INSERT INTO users (email) VALUES($1) RETURNING *",
-      [[email]]
+      [email]
     );
     res.json(newUser);
   } catch (err) {
@@ -54,8 +54,7 @@ app.put("/users/:id", async (req, res) => {
       "UPDATE users SET email = $1 WHERE user_id = $2",
       [email, id]
     );
-
-    res.json("Email was updated");
+    res.json("Email Updated");
   } catch (err) {
     console.error(err.message);
   }
@@ -75,6 +74,22 @@ app.delete("/users/:id", async (req, res) => {
   }
 });
 // check for a user
+
+app.put("/check", async (req, res) => {
+  try {
+    const { email } = req.body;
+    const check = await pool.query("SELECT * FROM users WHERE email = $1", [
+      email,
+    ]);
+    if (check.rows[0] == undefined) {
+      res.json("Email not found");
+    } else {
+      res.json("Email Found");
+    }
+  } catch (err) {
+    console.log(err.message);
+  }
+});
 
 app.listen(5000, () => {
   console.log("server has started on port 5000");
