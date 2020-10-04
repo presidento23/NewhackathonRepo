@@ -1,9 +1,7 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
-const PaymentSend = () => {
-  const [email, setEmail] = useState("");
-  const [found, setFound] = useState(false);
-
+const PaymentSend = ({ email, setEmail, found, setFound }) => {
   const fetchData = async () => {
     try {
       const body = { email };
@@ -26,7 +24,7 @@ const PaymentSend = () => {
 
   useEffect(() => {
     fetchData();
-  }, [found]);
+  });
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
@@ -44,7 +42,9 @@ const PaymentSend = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button className="btn btn-success"> Send</button>
+        <NavLink to="/Pay">
+          <button className="btn btn-success">Send</button>
+        </NavLink>
       </form>
       <p className="text-center mt-2">
         <small>
