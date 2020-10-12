@@ -33,7 +33,6 @@ const PaymentSend = ({ email, setEmail, found, setFound }) => {
 
   return (
     <Fragment>
-      <h1 className="text-center mt-5">Mailpay</h1>
       <h6 className="text-center mt-3">Enter an Email to send a payment</h6>
       <form className="d-flex mt-5" onSubmit={onSubmitForm}>
         <input
