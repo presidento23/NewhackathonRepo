@@ -7,3 +7,10 @@ It handles the front end work through react.js.
 # Summary
 
 This web app allows your email to become an identifier for your digitial wallet. As well as transact with other users of that digital wallet.  Currently the webapp is limited to XRP and BTC and is built on a testnet. Mainnet functionality will be available in the future.
+
+
+# Todo
+ - Add css to make the website pretty
+ - Add creation of wallets right on the website
+ - Add creation of an account on the website
+ - Add authorization flow
