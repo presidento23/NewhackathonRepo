@@ -14,3 +14,6 @@ This web app allows your email to become an identifier for your digitial wallet.
  - Add creation of wallets right on the website
  - Add creation of an account on the website
  - Add authorization flow
+
+
+Honestly this project will most likely never be finished as it was for a hackathon and was built to further advance my knowledge of payment flow and wallet/payid creation. This knowledge and the framework developed will be utilized in future projects. 
